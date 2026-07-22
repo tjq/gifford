@@ -58,9 +58,11 @@ System Settings → General → Login Items → **＋** → choose
 | `main.swift` | The whole app (menu bar item, settings, ffmpeg)     |
 | `Info.plist` | Bundle metadata (`LSUIElement` = menu-bar-only app) |
 | `build.sh`   | Compile → bundle → ad-hoc sign → install            |
+| `release.sh` | Universal build → sign → notarize → release zip     |
 
 ## First launch
 
-Because the app isn't notarized, the **first** time you may need to allow it via
-System Settings → Privacy & Security. macOS will also ask permission the first time
-it reads files from Desktop/Downloads — that's expected.
+The Homebrew build is signed and notarized, so it opens without fuss. If you
+build from source instead, the ad-hoc-signed app may need a one-time allow in
+System Settings → Privacy & Security. Either way, macOS will ask permission the
+first time it reads files from Desktop/Downloads — that's expected.
